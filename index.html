@@ -3,22 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Traction Revenue | Fractional VP of Sales — Ahsan Tajammul</title>
+<title>Traction Revenue | Fractional VP of Sales & Accounting Practice Modernization — Ahsan Tajammul</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230077C5'/><text x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='26' fill='white'>TR</text></svg>">
-<meta name="description" content="Fractional VP of Sales for B2B companies. 13+ years building sales teams, playbooks, and revenue motions. Based in Toronto, Canada.">
+<meta name="description" content="Fractional VP of Sales for B2B SaaS and FinTech. Accounting Practice Modernization for firms moving to cloud. 15+ years experience. Toronto, Canada.">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0077C5;
-  --accent: #2E86AB;
-  --accent-light: #5aa8c8;
-  --cream: #F7F5F0;
-  --cream-border: #E8E4DC;
+  --navy: #1A8FE3;
+  --accent: #3BAEE8;
+  --accent-light: #64C2F0;
+  --cream: #0D1220;
+  --cream-border: rgba(255,255,255,0.08);
   --white: #ffffff;
-  --text: #1a1a2e;
-  --muted: #666666;
-  --subtle: #999999;
+  --text: #E8EEF8;
+  --muted: #8B9DC3;
+  --subtle: #4A5878;
+  --teal: #2DC990;
+  --card: #141C2E;
+  --card-hover: #1A2540;
+  --elevated: #1E2B42;
 }
 
 html { scroll-behavior: smooth; }
@@ -36,8 +40,8 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(247, 245, 240, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(13, 18, 32, 0.92);
+  backdrop-filter: blur(12px);
   padding: 0 48px;
   height: 64px;
   display: flex;
@@ -49,7 +53,7 @@ nav {
 .nav-logo {
   font-size: 15px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: 0.3px;
 }
@@ -68,7 +72,7 @@ nav {
   transition: color 0.2s;
 }
 
-.nav-links a:hover { color: var(--navy); }
+.nav-links a:hover { color: var(--white); }
 
 .nav-links a.btn-pill-dark,
 .nav-links a.btn-pill-dark:hover {
@@ -76,7 +80,7 @@ nav {
 }
 
 .btn-pill-dark {
-  background: #0077C5 !important;
+  background: var(--navy) !important;
   color: #ffffff !important;
   text-decoration: none !important;
   font-size: 13px;
@@ -85,15 +89,14 @@ nav {
   border-radius: 24px;
   transition: background 0.2s, transform 0.15s;
   display: inline-block;
-  box-shadow: none;
   -webkit-font-smoothing: antialiased;
 }
 
-.btn-pill-dark:hover { background: #005fa3; transform: translateY(-1px); }
+.btn-pill-dark:hover { background: #0f78cc !important; transform: translateY(-1px); }
 
 .btn-pill-white {
   background: var(--white);
-  color: var(--navy);
+  color: #0D1220;
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
@@ -103,12 +106,28 @@ nav {
   display: inline-block;
 }
 
-.btn-pill-white:hover { background: #f0f0f0; transform: translateY(-1px); }
+.btn-pill-white:hover { background: #e8f4ff; transform: translateY(-1px); }
+
+.btn-pill-outline {
+  background: transparent;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 24px;
+  border: 1.5px solid var(--navy);
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+
+.btn-pill-outline:hover { background: rgba(26,143,227,0.1); transform: translateY(-1px); }
 
 /* HERO */
 .hero {
-  background: var(--cream);
-  padding: 140px 48px 100px;
+  background: radial-gradient(ellipse at 60% 0%, rgba(26,143,227,0.12) 0%, transparent 65%), var(--cream);
+  padding: 130px 48px 80px;
+  border-bottom: 1px solid var(--cream-border);
 }
 
 .hero-inner { max-width: 680px; }
@@ -123,20 +142,18 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(42px, 6vw, 64px);
+  font-size: clamp(38px, 5.5vw, 60px);
   font-weight: 800;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1.05;
   letter-spacing: -2px;
   margin-bottom: 20px;
 }
 
-.hero h1 span { color: var(--accent); }
-
 .hero-sub {
   font-size: 17px;
   color: var(--muted);
-  max-width: 460px;
+  max-width: 480px;
   margin-bottom: 36px;
   line-height: 1.65;
 }
@@ -144,13 +161,63 @@ nav {
 .hero-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 
-.hero-note {
-  font-size: 13px;
+/* NUMBERED OFFERINGS PREVIEW */
+.offerings-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--cream-border);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 620px;
+  background: var(--card);
+}
+
+.offering-item {
+  padding: 24px 28px;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: block;
+}
+
+.offering-item:first-child {
+  border-right: 1px solid var(--cream-border);
+}
+
+.offering-item:hover { background: var(--card-hover); }
+
+.offering-num {
+  font-size: 11px;
+  font-weight: 700;
   color: var(--subtle);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.offering-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.offering-who {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.offering-arrow {
+  font-size: 16px;
+  color: var(--accent);
+  margin-top: 10px;
+  display: block;
 }
 
 /* STATS */
@@ -160,6 +227,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background: linear-gradient(135deg, #0f6eb8 0%, #1A8FE3 50%, #0f6eb8 100%);
 }
 
 .stat-item { text-align: center; position: relative; }
@@ -190,9 +258,22 @@ nav {
 /* SECTIONS */
 .section { padding: 80px 48px; }
 .section-cream { background: var(--cream); }
-.section-white { background: var(--white); }
+.section-white { background: var(--card); }
+.section-teal { background: #0a2e20; }
 
 .container { max-width: 900px; margin: 0 auto; }
+
+/* SECTION NUMBERS */
+.section-number {
+  font-size: 64px;
+  font-weight: 800;
+  color: rgba(26,143,227,0.12);
+  line-height: 1;
+  margin-bottom: -8px;
+  letter-spacing: -2px;
+}
+
+.section-number.on-white { color: rgba(26,143,227,0.1); }
 
 .eyebrow-section {
   font-size: 11px;
@@ -203,14 +284,18 @@ nav {
   margin-bottom: 12px;
 }
 
+.eyebrow-section.teal { color: #5DCAA5; }
+
 .section-heading {
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 14px;
   line-height: 1.2;
   letter-spacing: -0.5px;
 }
+
+.section-heading.white { color: var(--white); }
 
 .section-sub {
   color: var(--muted);
@@ -218,6 +303,15 @@ nav {
   max-width: 520px;
   margin-bottom: 40px;
   line-height: 1.65;
+}
+
+.section-sub.white { color: rgba(255,255,255,0.65); }
+
+/* DIVIDER */
+.section-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+  margin: 0 48px;
 }
 
 /* PAIN POINTS */
@@ -232,9 +326,13 @@ nav {
   align-items: flex-start;
   gap: 16px;
   padding: 18px 22px;
-  background: var(--white);
+  background: var(--elevated);
   border-radius: 12px;
   border: 1px solid var(--cream-border);
+}
+
+.pain-item.on-white {
+  background: var(--cream);
 }
 
 .pain-dot {
@@ -246,9 +344,11 @@ nav {
   flex-shrink: 0;
 }
 
+.pain-dot.teal { background: #1a7a5e; }
+
 .pain-item p {
   font-size: 15px;
-  color: #333;
+  color: #B0C0D8;
   font-style: italic;
   line-height: 1.6;
 }
@@ -270,16 +370,16 @@ nav {
 }
 
 .client-pill {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--cream-border);
   border-radius: 24px;
   padding: 7px 18px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--accent);
 }
 
-/* CAPABILITIES */
+/* CAPABILITIES GRID */
 .caps-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -288,21 +388,22 @@ nav {
 
 .cap-card {
   padding: 24px 20px;
-  background: var(--cream);
+  background: var(--elevated);
   border-radius: 14px;
   border: 1px solid var(--cream-border);
-  border-top: 4px solid var(--accent);
-  transition: transform 0.2s;
+  border-top: 3px solid var(--accent);
+  transition: transform 0.2s, background 0.2s;
 }
 
-.cap-card:hover { transform: translateY(-2px); }
+.cap-card:hover { transform: translateY(-2px); background: var(--card-hover); }
+.cap-card.teal-top { border-top-color: var(--teal); }
 
 .cap-icon { font-size: 22px; margin-bottom: 12px; display: block; }
 
 .cap-title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 6px;
 }
 
@@ -321,16 +422,15 @@ nav {
 
 .service-card {
   padding: 36px 28px;
-  background: var(--white);
+  background: var(--elevated);
   border-radius: 18px;
   border: 1px solid var(--cream-border);
 }
 
 .service-card.featured {
-  background: var(--navy);
+  background: linear-gradient(160deg, #1075c4 0%, #0f5da0 100%);
   border: none;
   position: relative;
-  padding: 36px 28px;
 }
 
 .featured-tag {
@@ -339,14 +439,14 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
-  color: #0077C5;
+  color: #0f6eb8;
   font-size: 10px;
   font-weight: 800;
   padding: 4px 16px;
   border-radius: 20px;
   white-space: nowrap;
   letter-spacing: 0.8px;
-  border: 1px solid #E8E4DC;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .service-tier {
@@ -358,7 +458,7 @@ nav {
 }
 
 .service-tier.light { color: var(--accent); }
-.service-tier.dark { color: #ffffff; }
+.service-tier.dark { color: rgba(255,255,255,0.7); }
 
 .service-commitment {
   font-size: 12px;
@@ -374,7 +474,7 @@ nav {
 }
 
 .service-divider.light { background: var(--cream-border); }
-.service-divider.dark { background: rgba(255,255,255,0.1); }
+.service-divider.dark { background: rgba(255,255,255,0.15); }
 
 .service-features {
   list-style: none;
@@ -391,7 +491,7 @@ nav {
   line-height: 1.5;
 }
 
-.service-features li.light { color: #444; }
+.service-features li.light { color: var(--muted); }
 .service-features li.dark { color: #ffffff; }
 
 .service-features li::before {
@@ -403,7 +503,61 @@ nav {
 }
 
 .service-features li.light::before { color: var(--accent); }
-.service-features li.dark::before { color: #ffffff; }
+.service-features li.dark::before { color: rgba(255,255,255,0.8); }
+
+/* ACCOUNTING SERVICES */
+.acct-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.acct-card {
+  padding: 24px 20px;
+  background: var(--elevated);
+  border-radius: 14px;
+  border: 1px solid var(--cream-border);
+  border-top: 3px solid var(--teal);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.acct-card:hover { transform: translateY(-2px); background: var(--card-hover); }
+
+.acct-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.acct-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* INDUSTRIES */
+.industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.industry-tag {
+  background: var(--elevated);
+  border: 1px solid var(--cream-border);
+  border-radius: 24px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.industry-tag.new {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
 /* ABOUT */
 .about-grid {
@@ -441,7 +595,7 @@ nav {
 .about-name {
   font-size: 16px;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--white);
   margin-bottom: 3px;
 }
 
@@ -456,22 +610,22 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--navy);
+  color: var(--accent);
   text-decoration: none;
   font-size: 12px;
   font-weight: 600;
   border: 1px solid var(--cream-border);
-  background: var(--white);
+  background: var(--elevated);
   padding: 6px 14px;
   border-radius: 20px;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s;
 }
 
-.about-linkedin:hover { border-color: var(--accent); background: var(--cream); }
+.about-linkedin:hover { border-color: var(--accent); }
 
 .about-text p {
   font-size: 15px;
-  color: #444;
+  color: var(--muted);
   line-height: 1.75;
   margin-bottom: 16px;
 }
@@ -484,7 +638,7 @@ nav {
 }
 
 .highlight {
-  background: var(--white);
+  background: var(--cream);
   border: 1px solid var(--cream-border);
   border-radius: 10px;
   padding: 14px 16px;
@@ -493,7 +647,7 @@ nav {
 .highlight-number {
   font-size: 22px;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--accent);
   letter-spacing: -0.5px;
   line-height: 1;
   margin-bottom: 3px;
@@ -507,7 +661,7 @@ nav {
 
 /* CTA */
 .cta-section {
-  background: var(--navy);
+  background: linear-gradient(160deg, #0f6eb8 0%, #0d5a98 100%);
   padding: 80px 48px;
   text-align: center;
 }
@@ -537,7 +691,7 @@ nav {
 
 /* FOOTER */
 footer {
-  background: var(--cream);
+  background: #080D18;
   padding: 24px 48px;
   display: flex;
   justify-content: space-between;
@@ -564,17 +718,22 @@ footer p { color: var(--subtle); font-size: 12px; }
 @media (max-width: 700px) {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
-  .hero { padding: 110px 24px 70px; }
+  .hero { padding: 100px 24px 60px; }
   .section { padding: 60px 24px; }
+  .section-divider { margin: 0 24px; }
   .stats { padding: 24px; gap: 16px; flex-wrap: wrap; }
   .stat-item::after { display: none; }
+  .offerings-preview { grid-template-columns: 1fr; }
+  .offering-item:first-child { border-right: none; border-bottom: 1px solid var(--cream-border); }
   .caps-grid { grid-template-columns: 1fr 1fr; }
+  .acct-grid { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
   .about-highlights { grid-template-columns: 1fr 1fr; }
   footer { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
   .cta-section { padding: 60px 24px; }
+  .section-number { font-size: 44px; }
 }
 </style>
 </head>
@@ -584,7 +743,8 @@ footer p { color: var(--subtle); font-size: 12px; }
 <nav>
   <a href="#" class="nav-logo">Traction Revenue</a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
+    <li><a href="#sales">Sales Consulting</a></li>
+    <li><a href="#accounting">Accounting Firms</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="https://calendly.com/tractionrevenue/30min" target="_blank" class="btn-pill-dark">Book a call</a></li>
   </ul>
@@ -593,12 +753,27 @@ footer p { color: var(--subtle); font-size: 12px; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow">Fractional VP of Sales &nbsp;·&nbsp; Toronto, Canada</div>
-    <h1>The sales leader<br>your company<br>needs <span>right now.</span></h1>
-    <p class="hero-sub">Senior sales leadership without the full-time cost, equity, or hiring risk. I build the motion, hire the team, and get revenue off your plate.</p>
+    <div class="eyebrow">Toronto, Canada &nbsp;·&nbsp; 15 years experience</div>
+    <h1>The senior operator<br>your business<br>needs.</h1>
+    <p class="hero-sub">Two disciplines. One operator. Fractional VP of Sales for B2B companies scaling beyond founder-led revenue. Accounting Practice Modernization for firms ready to move to cloud.</p>
     <div class="hero-cta">
       <a href="https://calendly.com/tractionrevenue/30min" target="_blank" class="btn-pill-dark" style="font-size: 14px; padding: 12px 26px;">Book a free 30-min call</a>
-      <span class="hero-note">No pitch. Just a conversation.</span>
+      <span style="font-size: 13px; color: var(--subtle);">No pitch. Just a conversation.</span>
+    </div>
+
+    <div class="offerings-preview">
+      <a href="#sales" class="offering-item">
+        <div class="offering-num">01</div>
+        <div class="offering-title">Fractional VP of Sales</div>
+        <div class="offering-who">For B2B SaaS and FinTech founders who need a sales system, a playbook, and a team.</div>
+        <span class="offering-arrow">&#8594;</span>
+      </a>
+      <a href="#accounting" class="offering-item">
+        <div class="offering-num">02</div>
+        <div class="offering-title">Accounting Practice Modernization</div>
+        <div class="offering-who">For accounting firms moving from desktop to cloud — with a plan that protects your practice.</div>
+        <span class="offering-arrow">&#8594;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -606,7 +781,7 @@ footer p { color: var(--subtle); font-size: 12px; }
 <!-- STATS -->
 <div class="stats">
   <div class="stat-item">
-    <div class="stat-number">13+</div>
+    <div class="stat-number">15+</div>
     <div class="stat-label">Years in B2B Sales</div>
   </div>
   <div class="stat-item">
@@ -614,8 +789,8 @@ footer p { color: var(--subtle); font-size: 12px; }
     <div class="stat-label">Revenue Managed</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number">10x</div>
-    <div class="stat-label">Customer Growth</div>
+    <div class="stat-number">14,000+</div>
+    <div class="stat-label">Accounting Firms Served</div>
   </div>
   <div class="stat-item">
     <div class="stat-number">120%+</div>
@@ -623,45 +798,10 @@ footer p { color: var(--subtle); font-size: 12px; }
   </div>
 </div>
 
-<!-- PAIN POINTS -->
-<section class="section section-white" id="who">
-  <div class="container">
-    <div class="eyebrow-section">Who I work with</div>
-    <h2 class="section-heading">Does this sound familiar?</h2>
-    <p class="section-sub">I work with B2B founders and operators at the moment when sales needs to stop being founder-led — and start being scalable.</p>
-    <div class="pain-list">
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"We're closing deals but it's all founder-led and I can't scale it."</p>
-      </div>
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"We hired our first AE and it hasn't worked. We don't know why."</p>
-      </div>
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"We need a repeatable sales motion before our next fundraise."</p>
-      </div>
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"We can't afford a $250K VP of Sales but we need that expertise now."</p>
-      </div>
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"We have no sales playbook — every rep is doing something different."</p>
-      </div>
-      <div class="pain-item">
-        <div class="pain-dot"></div>
-        <p>"Our pipeline looks full but deals keep stalling after the demo."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CLIENTS -->
 <section class="section section-cream">
   <div class="container">
-    <div class="clients-label">Companies I've helped grow</div>
+    <div class="clients-label">Companies and firms I've worked with</div>
     <div class="clients-pills">
       <div class="client-pill">Intuit Canada</div>
       <div class="client-pill">Ring.io</div>
@@ -673,36 +813,71 @@ footer p { color: var(--subtle); font-size: 12px; }
   </div>
 </section>
 
-<!-- CAPABILITIES -->
-<section class="section section-white" id="capabilities">
+<div class="section-divider"></div>
+
+<!-- ======================== -->
+<!-- SECTION 01: SALES        -->
+<!-- ======================== -->
+<section class="section section-white" id="sales">
   <div class="container">
+    <div class="section-number on-white">01</div>
+    <div class="eyebrow-section">Fractional VP of Sales</div>
+    <h2 class="section-heading">Build your sales motion.<br>Without the full-time VP.</h2>
+    <p class="section-sub">I work with B2B founders and operators at the moment when sales needs to stop being founder-led and start being scalable. You get a proven sales leader embedded in your business — without the full-time cost or hiring risk.</p>
+
+    <!-- PAIN POINTS -->
+    <div class="pain-list" style="margin-bottom: 60px;">
+      <div class="pain-item on-white">
+        <div class="pain-dot"></div>
+        <p>"We're closing deals but it's all founder-led and I can't scale it."</p>
+      </div>
+      <div class="pain-item on-white">
+        <div class="pain-dot"></div>
+        <p>"We hired our first AE and it hasn't worked. We don't know why."</p>
+      </div>
+      <div class="pain-item on-white">
+        <div class="pain-dot"></div>
+        <p>"We need a repeatable sales motion before our next fundraise."</p>
+      </div>
+      <div class="pain-item on-white">
+        <div class="pain-dot"></div>
+        <p>"We can't afford a $250K VP of Sales but we need that expertise now."</p>
+      </div>
+      <div class="pain-item on-white">
+        <div class="pain-dot"></div>
+        <p>"Our pipeline looks full but deals keep stalling after the demo."</p>
+      </div>
+    </div>
+
+    <!-- CAPABILITIES -->
     <div class="eyebrow-section">What you get</div>
-    <h2 class="section-heading">A complete sales operator —<br>not just a strategy advisor</h2>
+    <h2 class="section-heading" style="margin-bottom: 14px;">A complete sales operator,<br>not just a strategy advisor.</h2>
     <p class="section-sub">I don't just tell you what to do. I build the systems, hire the people, and set up the infrastructure that makes your sales motion run.</p>
-    <div class="caps-grid">
+
+    <div class="caps-grid" style="margin-bottom: 60px;">
       <div class="cap-card">
         <span class="cap-icon">🚀</span>
-        <div class="cap-title">GTM Strategy & Execution</div>
+        <div class="cap-title">GTM Strategy and Execution</div>
         <div class="cap-desc">Go-to-market strategy, channel selection, pricing input, and hands-on execution from first outbound to first enterprise close.</div>
       </div>
       <div class="cap-card">
         <span class="cap-icon">🏆</span>
         <div class="cap-title">VP of Sales Leadership</div>
-        <div class="cap-desc">Board reporting, sales org design, comp planning, QBRs, and the full scope of a VP of Sales — at a fraction of the cost.</div>
+        <div class="cap-desc">Board reporting, sales org design, comp planning, QBRs, and the full scope of a VP of Sales at a fraction of the cost.</div>
       </div>
       <div class="cap-card">
         <span class="cap-icon">🎯</span>
-        <div class="cap-title">Sales Playbook & Process</div>
+        <div class="cap-title">Sales Playbook and Process</div>
         <div class="cap-desc">ICP definition, messaging frameworks, discovery scripts, objection handling, and a repeatable close process.</div>
       </div>
       <div class="cap-card">
         <span class="cap-icon">👥</span>
-        <div class="cap-title">Hiring & Onboarding</div>
+        <div class="cap-title">Hiring and Onboarding</div>
         <div class="cap-desc">First AE and SDR hiring criteria, comp design, ramp plans, and onboarding that gets reps productive fast.</div>
       </div>
       <div class="cap-card">
         <span class="cap-icon">📞</span>
-        <div class="cap-title">Rep Coaching & Performance</div>
+        <div class="cap-title">Rep Coaching and Performance</div>
         <div class="cap-desc">Call reviews, structured 1:1s, development plans, and frameworks that turn reps into consistent quota attainers.</div>
       </div>
       <div class="cap-card">
@@ -717,26 +892,22 @@ footer p { color: var(--subtle); font-size: 12px; }
       </div>
       <div class="cap-card">
         <span class="cap-icon">📋</span>
-        <div class="cap-title">SQL / MQL Frameworks</div>
+        <div class="cap-title">SQL and MQL Frameworks</div>
         <div class="cap-desc">Lead scoring, MQL to SQL handoff processes, and prospect list infrastructure so your team converts more.</div>
       </div>
       <div class="cap-card">
         <span class="cap-icon">📊</span>
-        <div class="cap-title">CRM & Pipeline Design</div>
+        <div class="cap-title">CRM and Pipeline Design</div>
         <div class="cap-desc">CRM setup, pipeline stages, forecasting frameworks, and dashboards that give you real revenue visibility.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- SERVICES -->
-<section class="section section-cream" id="services">
-  <div class="container">
+    <!-- SERVICES TIERS -->
     <div class="eyebrow-section">Services</div>
-    <h2 class="section-heading">Three ways to work together</h2>
+    <h2 class="section-heading" style="margin-bottom: 14px;">Three ways to work together.</h2>
     <p class="section-sub">All engagements start with a 30-day sales audit. Minimum 3-month commitment, month-to-month after that.</p>
-    <div class="services-grid">
 
+    <div class="services-grid">
       <div class="service-card">
         <div class="service-tier light">Advisory</div>
         <div class="service-commitment light">4 hours / month</div>
@@ -767,7 +938,7 @@ footer p { color: var(--subtle); font-size: 12px; }
 
       <div class="service-card">
         <div class="service-tier light">Embedded</div>
-        <div class="service-commitment light">3–4 days / month (~28 hrs)</div>
+        <div class="service-commitment light">3-4 days / month (~28 hrs)</div>
         <div class="service-divider light"></div>
         <ul class="service-features">
           <li class="light">Full sales team build-out</li>
@@ -778,10 +949,113 @@ footer p { color: var(--subtle); font-size: 12px; }
           <li class="light">Everything in Fractional</li>
         </ul>
       </div>
+    </div>
 
+    <!-- BEST FIT FOR -->
+    <div style="margin-top: 48px;">
+      <div class="eyebrow-section">Best fit for</div>
+      <div class="industries">
+        <div class="industry-tag new">Founder-led sales to first hire</div>
+        <div class="industry-tag new">Seed to Series B</div>
+        <div class="industry-tag new">Outbound and pipeline build</div>
+        <div class="industry-tag new">Channel and partner sales</div>
+        <div class="industry-tag new">First revenue team</div>
+        <div class="industry-tag new">SMB and mid-market motion</div>
+        <div class="industry-tag new">Post-PMF scale</div>
+      </div>
+    </div>
+
+    <!-- INDUSTRIES SERVED -->
+    <div style="margin-top: 32px;">
+      <div class="eyebrow-section">Industries</div>
+      <div class="industries">
+        <div class="industry-tag">FinTech</div>
+        <div class="industry-tag">Healthcare SaaS</div>
+        <div class="industry-tag">Telecom</div>
+        <div class="industry-tag">IT</div>
+        <div class="industry-tag">Retail</div>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
+
+<!-- ========================== -->
+<!-- SECTION 02: ACCOUNTING     -->
+<!-- ========================== -->
+<section class="section section-cream" id="accounting">
+  <div class="container">
+    <div class="section-number">02</div>
+    <div class="eyebrow-section">Accounting Practice Modernization</div>
+    <h2 class="section-heading">Move your firm to cloud.<br>The right way.</h2>
+    <p class="section-sub">15 years at Intuit Canada managing relationships with 14,000+ accounting firms. I've seen every reason practices stall and every way to move them forward. The move from desktop to cloud is not just a software change — it's a workflow change, a team change, and a client communication challenge.</p>
+
+    <!-- ACCOUNTING PAIN POINTS -->
+    <div class="pain-list" style="margin-bottom: 60px;">
+      <div class="pain-item">
+        <div class="pain-dot teal"></div>
+        <p>"We know we need to move to cloud but we don't know where to start."</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dot teal"></div>
+        <p>"Our staff is resistant to change and we can't afford disruption to our practice."</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dot teal"></div>
+        <p>"We don't know how to communicate this transition to our clients without losing them."</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dot teal"></div>
+        <p>"We tried to migrate before and it was a mess. We need a proper plan this time."</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-dot teal"></div>
+        <p>"We're not sure which cloud tools are right for our firm's size and client base."</p>
+      </div>
+    </div>
+
+    <!-- ACCOUNTING SERVICES -->
+    <div class="eyebrow-section">What you get</div>
+    <h2 class="section-heading" style="margin-bottom: 14px;">Six ways I modernize your practice.</h2>
+    <p class="section-sub">Hands-on consulting grounded in real experience helping accounting firms make this exact transition.</p>
+
+    <div class="acct-grid">
+      <div class="acct-card">
+        <span class="cap-icon">🔍</span>
+        <div class="acct-title">Cloud Readiness Assessment</div>
+        <div class="acct-desc">A 2-week audit of your current workflows, team capacity, and client mix to map the right migration path for your firm.</div>
+      </div>
+      <div class="acct-card">
+        <span class="cap-icon">🗺️</span>
+        <div class="acct-title">Migration Roadmap</div>
+        <div class="acct-desc">A phased transition plan that moves your practice to cloud at the right pace — without disrupting your current client service.</div>
+      </div>
+      <div class="acct-card">
+        <span class="cap-icon">👥</span>
+        <div class="acct-title">Staff Training and Adoption</div>
+        <div class="acct-desc">Structured training program to get your team productive on cloud tools fast, with accountability built in from day one.</div>
+      </div>
+      <div class="acct-card">
+        <span class="cap-icon">💬</span>
+        <div class="acct-title">Client Communication Playbook</div>
+        <div class="acct-desc">Scripts, emails, and FAQs so your clients understand the change, trust the process, and stay with your firm through the transition.</div>
+      </div>
+      <div class="acct-card">
+        <span class="cap-icon">💻</span>
+        <div class="acct-title">Tech Stack Selection</div>
+        <div class="acct-desc">QuickBooks Online, payroll, payments, and integrations — the right tools for your firm's size, workflow, and client needs.</div>
+      </div>
+      <div class="acct-card">
+        <span class="cap-icon">🤖</span>
+        <div class="acct-title">AI Workflow Integration</div>
+        <div class="acct-desc">AI tools layered into your cloud workflow to automate repetitive tasks and free your team for higher-value advisory work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
 
 <!-- ABOUT -->
 <section class="section section-white" id="about">
@@ -799,9 +1073,10 @@ footer p { color: var(--subtle); font-size: 12px; }
       </div>
       <div class="about-text">
         <div class="eyebrow-section">About</div>
-        <p>I'm a senior sales leader with 13+ years building and scaling revenue engines across B2B SaaS, FinTech, and telecom. At Intuit Canada, I led three successive sales mandates: building an offshore AM team of 14 in Manila from zero, standing up a mid-market cloud acquisition motion from scratch, and managing a $90M channel partner portfolio of 2,100 customers.</p>
+        <p>I'm a senior sales leader with 15+ years building and scaling revenue engines across B2B SaaS, FinTech, Healthcare SaaS, and telecom. At Intuit Canada, I led three successive mandates: building an offshore AM team in Manila from zero, standing up a mid-market cloud acquisition motion from scratch, and managing a $90M channel partner portfolio of 2,100 customers.</p>
+        <p>Through that work, I built deep expertise consulting 14,000+ accounting firms through their shift from desktop to cloud — understanding not just the technology, but the workflow, the people change, and the client communication challenge that comes with it.</p>
         <p>Outside of Intuit, I've worked with early-stage companies like Ring.io and Resemble AI, helping them hire their first sales rep, build their playbook, and scale revenue 10x.</p>
-        <p>Now I bring that operator experience to B2B companies as a Fractional VP of Sales. You get a proven sales leader embedded in your business, without the full-time cost or risk.</p>
+        <p>Now I bring that operator experience to two types of clients: B2B companies who need a Fractional VP of Sales, and accounting firms who need a trusted guide through modernization.</p>
         <div class="about-highlights">
           <div class="highlight">
             <div class="highlight-number">27%</div>
@@ -812,8 +1087,8 @@ footer p { color: var(--subtle); font-size: 12px; }
             <div class="highlight-label">Customer growth, mid-market</div>
           </div>
           <div class="highlight">
-            <div class="highlight-number">14</div>
-            <div class="highlight-label">Person offshore team built from zero</div>
+            <div class="highlight-number">107%</div>
+            <div class="highlight-label">Of $15M annual growth target</div>
           </div>
           <div class="highlight">
             <div class="highlight-number">22%</div>
@@ -828,8 +1103,8 @@ footer p { color: var(--subtle); font-size: 12px; }
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <h2>Ready to build your sales motion?</h2>
-    <p>Book a free 30-minute call. No pitch — just an honest conversation about where you're at with sales.</p>
+    <h2>Not sure which path fits?</h2>
+    <p>Book a free 30-minute call. No pitch — just an honest conversation about where you are and what you need.</p>
     <a href="https://calendly.com/tractionrevenue/30min" target="_blank" class="btn-pill-white" style="font-size: 15px; padding: 14px 32px;">Book your free call &rarr;</a>
     <p class="cta-note">Typically respond within 24 hours</p>
   </div>
